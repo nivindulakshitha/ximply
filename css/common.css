@@ -197,7 +197,6 @@ main {
     height: calc(100vh - 64px);
     background-color: var(--background-color);
     visibility: visible;
-    overflow-y: hidden;
 }
 
 @media (max-device-width: 1170px) {
