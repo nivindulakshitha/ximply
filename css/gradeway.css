@@ -1,0 +1,180 @@
+:root {
+    --tabulator-background: rgba(0, 0, 0, 0.1);
+    --tabulator-foreground: var(--x-black);
+}
+
+main.gradeway .global-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    gap: 30px;
+}
+
+.page-title svg {
+    height: 168px;
+    width: auto;
+    margin-bottom: 8px;
+    padding: 54px 0;
+    box-sizing: border-box;
+}
+
+.global-container .page-container[hold="gradeway"] {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    min-height: fit-content;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-collection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.input-collection input {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 20px 10px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    background-color: var(--input-background);
+    color: var(--x-white);
+    outline: none;
+    border: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: background-color 0.5s ease-out;
+}
+
+.input-collection input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+section#gradeway .input-collection input:first-child {
+    width: 150px;
+    text-align: center;
+}
+
+.warning-message {
+    display: block;
+    font-size: small;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    color: var(--x-red);
+    margin-bottom: 24px;
+}
+
+#gradeway-table,
+#gradeway-table *:not(.tabulator .tabulator-col-resize-handle) {
+    background-color: rgba(255, 255, 255, 0) !important;
+    background: rgba(255, 255, 255, 0) !important;
+}
+
+.tabulator {
+    border: 1px solid var(--tabulator-background) !important;
+    border-right: 1px solid transparent !important;
+    transition: border 0.5s ease-out;
+}
+
+.tabulator-row,
+.tabulator-header {
+    border-bottom: 1px solid var(--tabulator-background) !important;
+    transition: border-bottom 0.5s ease-out;
+}
+
+#gradeway-table * {
+    color: var(--tabulator-foreground);
+    transition: color 0.5s ease-out;
+}
+
+.tabulator .tabulator-col-resize-handle {
+    background-color: var(--tabulator-background);
+    transition: background-color 0.5s ease-out;
+    width: 1px !important;
+}
+
+#gradeway-table-container {
+    width: fit-content;
+    max-width: 100%;
+}
+
+.tabulator .tabulator-tableholder::-webkit-scrollbar {
+    appearance: none;
+    height: 5px;
+}
+
+.tabulator .tabulator-tableholder::-webkit-scrollbar-thumb {
+    background-color: #008e5e;
+}
+
+.global-container .page-container[hold="gradeway"] .footer-description {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.page-container[hold="gradeway"] .footer-description p.description {
+    max-width: 90%;
+    white-space: wrap;
+    text-align: justify;
+    line-height: 2em;
+}
+
+.page-container[hold="gradeway"] .footer-description p.description span {
+    display: block;
+    text-align: right;
+    line-height: 3em;
+    font-style: oblique;
+    white-space: nowrap;
+}
+
+@media (max-device-width: 1000px) {
+    .page-container[hold="gradeway"] .footer-description p.description {
+        max-width: 60%;
+    }
+}
+
+@media (max-device-width: 800px) {
+    .page-container[hold="gradeway"] .footer-description {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .page-container[hold="gradeway"] .footer-description p.description {
+        max-width: 90%;
+    }
+
+    .page-container[hold="gradeway"] .footer-description svg {
+        width: 90%;
+    }
+}
+
+@media (max-device-width: 600px) {
+    main.gradeway .page-title svg {
+        width: auto;
+        height: 150px;
+    }
+}
+
+@media (max-device-width: 500px) {
+    main.gradeway .page-title svg {
+        width: auto;
+        height: 140px;
+    }
+}
