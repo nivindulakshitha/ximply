@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="/asserts/images/ximply.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../asserts/images/ximply.png" type="image/x-icon" />
+    <link rel="icon" href="../asserts/images/ximply.png" type="image/x-icon">
+    <link rel="icon" href="../asserts/images/ximply.png" sizes="16x16" type="image/png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ximply | Learn with ease on ximply</title>
@@ -15,12 +17,36 @@
     <script src="./scripts/common.js" defer></script>
 </head>
 
+<script>
+    window.addEventListener("load", () => { changeThemeTo(localStorage.getItem('theme'), tartget = "outHome"); });
+</script>
+
 <body>
+    <div id="side-panel" class="side-panel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNavigation()">×</a>
+        <ul class="btn-role navigation-links">
+            <li>
+                <a href="" class="btn-role active" title="Go to Home">
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./pages/cources.htm" class="btn-role" title="Go to Cources">
+                    <span class="text">Cources</span>
+                </a>
+            </li>
+            <li>
+                <a href="./pages/gradeway.htm" class="btn-role" title="Go to Gradeway">
+                    <span class="text">Gradeway</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="body-content">
         <header class="global-header" page="#home">
             <div class="global-header-wrapper headder-shadow">
                 <div class="header-large-screen xm-container">
-                    <a href="#" class="btn-role" title="Go to the Homepage">
+                    <a href="#" class="btn-role" title="Go to Homepage">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 531.07 173.72" alt="Missing image"
                             id="web-logo">
                             <defs>
@@ -51,18 +77,28 @@
                     </a>
                     <div class="strech-block"></div>
                     <ul class="btn-role navigation-links">
+                        <li id="side-panel-button">
+                            <a onclick="openNavigation()" class="btn-role">
+                                <span class="text">☰</span>
+                            </a>
+                        </li>
                         <li>
-                            <a href="./pages/cources.htm" class="btn-role" title="Go to the Cources">
+                            <a href="./pages/cources.htm" class="btn-role" title="Go to Cources">
                                 <span class="text">Cources</span>
                             </a>
                         </li>
                         <li>
-                            <a href="./" class="btn-role" title="Go to the Productivity">
+                            <a href="./pages/gradeway.htm" class="btn-role" title="Go to Gradeway">
+                                <span class="text">Gradeway</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./" class="btn-role unavailable" title="Go to Productivity">
                                 <span class="text">Productivity</span>
                             </a>
                         </li>
                         <li>
-                            <a href="./" class="btn-role" title="Go to the Ximplians">
+                            <a href="./" class="btn-role unavailable" title="Go to Ximplians">
                                 <span class="text">Ximplians</span>
                             </a>
                         </li>
@@ -82,25 +118,28 @@
                         <span class="main-title text">
                             Learn<br />with ease on<br />ximply</span><br />
                         <span class="sub-note text">
-                            Welcome to Ximply! We are a
+                            Welcome to ximply! We are a
                             <span class="highlight-word text">premier
                                 <svg class="svg-path" xmlns="http://www.w3.org/2000/svg" width="134" height="34"
                                     viewBox="0 0 134 34" style="
-                                            display: block;
-                                            width: 134px;
-                                            clip-path: polygon(
-                                                100% 0px,
-                                                0px 0px,
-                                                0px 100%,
-                                                100% 100%
-                                            );
-                                        ">
+                                                display: block;
+                                                width: 134px;
+                                                clip-path: polygon(
+                                                    100% 0px,
+                                                    0px 0px,
+                                                    0px 100%,
+                                                    100% 100%
+                                                );
+                                            ">
                                     <path
                                         d="M0 34V7.48C21.44 2.04 97.82 0 134 0.34V11.56L128.64 14.62L134 13.60C134 14.28 131.32 20.06 131.32 25.84C115.24 25.84 37.52 30.94 0 34Z">
                                     </path>
                                 </svg>
                             </span>
-pathway to mastering the art of ICT! We take pride in being your trusted educational centre for cultivating deep expertise and honing your skills. Thank you for embarking on this educational journey with Ximply. Let's take the first step together towards your transformation into a confident and accomplished student today!
+                            pathway to mastering the art of education! We take pride in being your trusted educational
+                            centre for cultivating deep expertise and honing your skills. Thank you for embarking on
+                            this educational journey with ximply. Let's take the first step together towards your
+                            transformation into a confident and accomplished student today!
                         </span>
                     </div>
                     <div class="description-block">
@@ -454,7 +493,7 @@ pathway to mastering the art of ICT! We take pride in being your trusted educati
                             </g>
                         </svg>
                         <span class="description-text text opaque">Don't let this opportunity pass you by</span>
-                        <a class="btn"> See Availability </a>
+                        <a href="./pages/cources.htm" class="btn"> See Availability </a>
                     </div>
                 </div>
             </main>
