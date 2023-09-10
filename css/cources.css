@@ -328,4 +328,11 @@ div.level-box .level-icon {
         justify-content: space-around;
         row-gap: 30px;
     }
+    
+    .cource-box .cource-details .title, .cource-box .cource-details .code {
+        overflow: unset;
+        -webkit-line-clamp: unset;
+        text-overflow: unset;
+        -webkit-box-orient: unset;
+    }
 }
