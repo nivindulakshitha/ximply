@@ -95,6 +95,10 @@ section#gradeway .input-collection input:first-child {
     transition: border-bottom 0.5s ease-out;
 }
 
+.tabulator .tabulator-header {
+    font-weight: unset !important;
+}
+
 #gradeway-table * {
     color: var(--tabulator-foreground);
     transition: color 0.5s ease-out;
