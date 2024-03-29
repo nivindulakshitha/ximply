@@ -184,6 +184,7 @@ function gradewayLoginCheck(username, password) {
             ).toString(CryptoJS.enc.Utf8)
         );
         if (
+            
             element.toUpperCase() == username &&
             CryptoJS.AES.decrypt(
                 gradewayData.credentials[element].password,
@@ -198,6 +199,54 @@ function gradewayLoginCheck(username, password) {
 
     return gradewayLogin;
 }
+
+function gradewayLoginCheck(username, password) {
+    let gradewayLogin = false;
+    Object.keys(gradewayData.credentials).forEach((element) => {
+        console.log(
+            username,
+            CryptoJS.AES.decrypt(
+                gradewayData.credentials[element].password,
+                "ximply$1#9T&zRwQ@5*pXuY"
+            ).toString(CryptoJS.enc.Utf8)
+        );
+        console.log(authenticateUser(username, password))
+        if (
+            element.toUpperCase() == username &&
+            CryptoJS.AES.decrypt(
+                gradewayData.credentials[element].password,
+                "ximply$1#9T&zRwQ@5*pXuY"
+            )
+                .toString(CryptoJS.enc.Utf8)
+                .toUpperCase() == password
+        ) {
+            gradewayLogin = true;
+        }
+    });
+
+    return gradewayLogin;
+}
+
+async function authenticateUser(username, password) {
+    const response = await fetch("https://xlapi.netlify.app/api/auth", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+}
+
 
 function retriveGradewayData(username) {
     let data = [];
